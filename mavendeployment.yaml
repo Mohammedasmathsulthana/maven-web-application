@@ -4,7 +4,7 @@ metadata:
   name: deployment
 spec:
   selector:
-    app: deployment
+    app: javaapp
   replicas: 1
   strategy:
     type: Recreate
@@ -12,7 +12,7 @@ spec:
     metadata:
       name: podname
       labels:
-        app: deployment
+        app: javaapp
     spec:
       image: asmathsulthana/mavenapplication:1
       ports:
@@ -24,7 +24,7 @@ metadata:
   name: appservice
 spec:
  selector:
-   app: deployment
+   app: javaapp
  type: NodePort
  ports:
    - port: 80
